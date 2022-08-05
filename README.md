@@ -35,6 +35,14 @@ function in "lib/Command/ArgumentFunctionList.php".
   $options->addOption('name', 'Name of your project', 'get_name');
 ```
 
+And in "lib/Command/ArgumentFunctionList.php", we have "get_name" with one parameter (user response) :
+
+```php
+  function get_name(string $name) {
+    echo "Your name is $name";
+  }
+```
+
 3 - To retrieve the list of existing options
 
 ```php
