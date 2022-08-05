@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+
+use bin\lib\Command\ActionCommand;
+use bin\lib\Command\CommandArgument;
+use bin\lib\Instance\Options;
+use bin\lib\Instance\Question;
+use bin\lib\PrompCommande;
+
+include 'bootstrap.php';
+
+// Using argument on CLI : --key value
+
+$options = new Options();
+// $options->addOption('name', 'Name of your project', 'get_name');
+// $options->getOptionList();
+
+// Message prompt
+
+$prompt = new PrompCommande();
+$question = new Question('string', 'Name of your project : ');
+// $name = $prompt->execute($question)->getReponse();
+
+(new CommandArgument($argv, $options))->execute();
+(new ActionCommand)->execute([]);
